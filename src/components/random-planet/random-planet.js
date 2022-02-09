@@ -36,7 +36,6 @@ class RandomPlanet extends Component {
         error: false
     };
 
-    //TODO Переписать компоненты жизненного цикла так чтобы не выводить данные если компонент отключен (Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount method)
     componentDidMount(){
         const { updateInterval } = this.props;
         this.updatePlanet();

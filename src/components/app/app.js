@@ -10,7 +10,8 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-d
 import {
     PeoplePage,
     PlanetsPage,
-    StarshipsPage} from "../pages";
+    StarshipsPage
+} from "../pages";
 
 import './app.css';
 
@@ -39,7 +40,6 @@ export default class App extends Component {
     };
 
     render(){
-        const { isLoggedIn } = this.state;
 
         const planet = this.state.showRandomPlanet ? <RandomPlanet/> : null;
 
@@ -54,15 +54,15 @@ export default class App extends Component {
                             {planet}
                             <Routes>
                                 <Route path="/" element={<h2>Welcome to StarDB</h2>}/>
-                                <Route path="/people" element={<PeoplePage/>} >
-                                    <Route path=":id" element={<PeoplePage/>} />
+                                <Route path="/people" element={<PeoplePage/>}>
+                                    <Route path=":id" element={<PeoplePage/>}/>
                                 </Route>
-                                <Route path="/planets" element={<PlanetsPage/>} />
+                                <Route path="/planets" element={<PlanetsPage/>}/>
                                 <Route path="/starships">
                                     <Route index element={<StarshipsPage/>}/>
-                                    <Route path=":id" element={<StarshipDetails/>} />
+                                    <Route path=":id" element={<StarshipDetails/>}/>
                                 </Route>
-                                <Route path="*" element={<Navigate to="/" replace/>} />
+                                <Route path="*" element={<Navigate to="/" replace/>}/>
                             </Routes>
                         </div>
                     </Router>
